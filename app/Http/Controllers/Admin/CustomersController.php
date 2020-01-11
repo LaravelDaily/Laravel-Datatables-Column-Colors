@@ -22,6 +22,7 @@ class CustomersController extends Controller
 
             $table->addColumn('placeholder', '&nbsp;');
             $table->addColumn('actions', '&nbsp;');
+            $table->addColumn('status_color', '&nbsp;');
 
             $table->editColumn('actions', function ($row) {
                 $viewGate      = 'customer_show';
@@ -43,6 +44,9 @@ class CustomersController extends Controller
             });
             $table->editColumn('name', function ($row) {
                 return $row->name ? $row->name : "";
+            });
+            $table->editColumn('status_color', function ($row) {
+                return $row->status && Customer::STATUS_COLOR[$row->status] ? Customer::STATUS_COLOR[$row->status] : 'none';
             });
             $table->editColumn('status', function ($row) {
                 return $row->status ? Customer::STATUS_SELECT[$row->status] : '';

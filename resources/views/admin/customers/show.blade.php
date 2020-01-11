@@ -35,7 +35,7 @@
                         <th>
                             {{ trans('cruds.customer.fields.status') }}
                         </th>
-                        <td>
+                        <td style="background-color: {{ App\Customer::STATUS_COLOR[$customer->status] ?? 'none' }};">
                             {{ App\Customer::STATUS_SELECT[$customer->status] ?? '' }}
                         </td>
                     </tr>

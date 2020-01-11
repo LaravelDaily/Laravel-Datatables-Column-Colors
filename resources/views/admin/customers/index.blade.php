@@ -93,6 +93,9 @@
     ],
     order: [[ 1, 'desc' ]],
     pageLength: 100,
+    createdRow: (row, data, dataIndex, cells) => {
+        $(cells[3]).css('background-color', data.status_color)
+    }
   };
   $('.datatable-Customer').DataTable(dtOverrideGlobals);
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
