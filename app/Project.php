@@ -30,4 +30,10 @@ class Project extends Model
         'active'   => 'Active',
         'archived' => 'Archived',
     ];
+
+    const STATUS_COLOR = [
+        'pending'  => '#FFFF99',
+        'active'   => '#90EE90',
+        'archived' => '#00BFFF',
+    ];
 }

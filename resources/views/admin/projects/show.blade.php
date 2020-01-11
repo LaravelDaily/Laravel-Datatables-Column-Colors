@@ -35,7 +35,7 @@
                         <th>
                             {{ trans('cruds.project.fields.status') }}
                         </th>
-                        <td>
+                        <td style="background-color: {{ App\Project::STATUS_COLOR[$project->status] ?? 'none' }};">
                             {{ App\Project::STATUS_SELECT[$project->status] ?? '' }}
                         </td>
                     </tr>

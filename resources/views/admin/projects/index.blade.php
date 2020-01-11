@@ -48,7 +48,7 @@
                             <td>
                                 {{ $project->name ?? '' }}
                             </td>
-                            <td>
+                            <td style="background-color: {{ App\Project::STATUS_COLOR[$project->status] ?? 'none' }};">
                                 {{ App\Project::STATUS_SELECT[$project->status] ?? '' }}
                             </td>
                             <td>
